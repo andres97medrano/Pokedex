@@ -16,6 +16,9 @@ class MainViewController: UIViewController
     var pokedexSloganLabel: UILabel!
     var pokemonTypesLabel : UILabel!
     
+    // IMAGE
+    var pokemonImageView : UIImageView!
+    
     // TEXT FIELDS
     var searchBarTextField : UITextField!
     var attackPointsTextField : UITextField!
@@ -55,7 +58,8 @@ class MainViewController: UIViewController
         
         // Set-up the Screen
         self.view.backgroundColor = UIColor.blue
-        displayTitle()
+        
+        //displayTitle()
         displaySlogan()
         displaySearchBar()
         displayAttackPoints()
@@ -64,7 +68,8 @@ class MainViewController: UIViewController
         displaySearchButton()
         displayRandomButton()
         displayCategoryScrollView()
-        
+        setupNavigationBar()
+        displayHeaderImage()
     }
     
     override func viewWillAppear(_ animated: Bool)

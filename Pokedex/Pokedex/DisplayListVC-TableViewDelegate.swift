@@ -20,6 +20,14 @@ extension DisplayListViewController : UITableViewDelegate, UITableViewDataSource
         view.addSubview(resultsList)
     }
     
+    func setupNavigationBar()
+    {
+        navigationItem.title = "Search Results"
+        navigationController?.navigationBar.barTintColor = UIColor.black
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white, NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 30)]
+        
+    }
+    
     // ============================== CONFIGURING THE TABLE VIEW AND CELLS ==============================
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

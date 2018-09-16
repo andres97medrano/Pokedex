@@ -34,7 +34,7 @@ class DisplayListViewController: UIViewController
     {
         super.viewDidLoad()
         
-        self.view.backgroundColor = UIColor.black
+        setupNavigationBar()
         createResultsList()
     }
     

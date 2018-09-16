@@ -12,21 +12,30 @@ extension MainViewController : UICollectionViewDelegate, UICollectionViewDataSou
 {
     // =====================================      SET-UP      =====================================
     
-    func displayTitle()
+//    func displayTitle()
+//    {
+//        // POKEDEX TITLE
+//        pokedexTitleLabel = UILabel(frame: CGRect(x: 0, y: view.frame.height / 10, width: view.frame.width, height: 50))
+//        pokedexTitleLabel.textAlignment = .center
+//        pokedexTitleLabel.text = "POKEDEX"
+//        pokedexTitleLabel.textColor = UIColor.green
+//        pokedexTitleLabel.font = pokedexTitleLabel.font.withSize(50)
+//        self.view.addSubview(pokedexTitleLabel)
+//    }
+    
+    func displayHeaderImage()
     {
-        // POKEDEX TITLE
-        pokedexTitleLabel = UILabel(frame: CGRect(x: 0, y: view.frame.height / 10, width: view.frame.width, height: 50))
-        pokedexTitleLabel.textAlignment = .center
-        pokedexTitleLabel.text = "POKEDEX"
-        pokedexTitleLabel.textColor = UIColor.green
-        pokedexTitleLabel.font = pokedexTitleLabel.font.withSize(50)
-        self.view.addSubview(pokedexTitleLabel)
+        pokemonImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 175, height: 175))
+        pokemonImageView.center = CGPoint(x: view.frame.width / 2, y: 2 * view.frame.height / 10)
+        pokemonImageView.image = UIImage(named: "pokemon")
+        pokemonImageView.contentMode = .scaleAspectFit
+        self.view.addSubview(pokemonImageView)
     }
     
     func displaySlogan()
     {
         // POKEDEX SLOGAN
-        pokedexSloganLabel = UILabel(frame: CGRect(x: 0, y: pokedexTitleLabel.frame.maxY + 10 , width: view.frame.width, height: 50))
+        pokedexSloganLabel = UILabel(frame: CGRect(x: 0, y: 2.8 * view.frame.height / 10 , width: view.frame.width, height: 50))
         pokedexSloganLabel.textAlignment = .center
         pokedexSloganLabel.text = "You gotta search them all!"
         pokedexSloganLabel.textColor = UIColor.white
@@ -37,7 +46,7 @@ extension MainViewController : UICollectionViewDelegate, UICollectionViewDataSou
     func displaySearchBar()
     {
         // SEARCH BAR
-        searchBarTextField = UITextField(frame: CGRect(x: view.frame.width / 8, y: 3 * view.frame.height / 10, width: 6 * view.frame.width / 8, height: 40))
+        searchBarTextField = UITextField(frame: CGRect(x: view.frame.width / 8, y: 3.75 * view.frame.height / 10, width: 6 * view.frame.width / 8, height: 40))
         searchBarTextField.placeholder = "Enter a character name or number.. "
         let spacerView1 = UIView(frame:CGRect(x:0, y:0, width:10, height:10))
         searchBarTextField.leftViewMode = UITextFieldViewMode.always
@@ -49,7 +58,7 @@ extension MainViewController : UICollectionViewDelegate, UICollectionViewDataSou
     func displayAttackPoints()
     {
         // ATTACK POINTS
-        attackPointsTextField = UITextField(frame: CGRect(x: 2 * view.frame.width / 15, y: 6 * view.frame.height / 10 , width: view.frame.width / 5, height: 40))
+        attackPointsTextField = UITextField(frame: CGRect(x: 2 * view.frame.width / 15, y: 6.5 * view.frame.height / 10 , width: view.frame.width / 5, height: 40))
         attackPointsTextField.placeholder = "ATTACK"
         attackPointsTextField.leftViewMode = UITextFieldViewMode.always
         let spacerView2 = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
@@ -61,7 +70,7 @@ extension MainViewController : UICollectionViewDelegate, UICollectionViewDataSou
     func displayDefensePoints()
     {
         // DEFENSE POINTS
-        defensePointsTextField = UITextField(frame: CGRect(x: 6 * view.frame.width / 15, y: 6 * view.frame.height / 10, width: view.frame.width / 5, height: 40))
+        defensePointsTextField = UITextField(frame: CGRect(x: 6 * view.frame.width / 15, y: 6.5 * view.frame.height / 10, width: view.frame.width / 5, height: 40))
         defensePointsTextField.placeholder = "DEF"
         defensePointsTextField.leftViewMode = UITextFieldViewMode.always
         let spacerView3 = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
@@ -73,7 +82,7 @@ extension MainViewController : UICollectionViewDelegate, UICollectionViewDataSou
     func displayHealthPoints()
     {
         // HEALTH POINTS
-        healthPointsTextField = UITextField(frame: CGRect(x: 10 * view.frame.width / 15, y: 6 * view.frame.height / 10, width: view.frame.width / 5, height: 40))
+        healthPointsTextField = UITextField(frame: CGRect(x: 10 * view.frame.width / 15, y: 6.5 * view.frame.height / 10, width: view.frame.width / 5, height: 40))
         healthPointsTextField.placeholder = "HEALTH"
         healthPointsTextField.leftViewMode = UITextFieldViewMode.always
         let spacerView4 = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
@@ -85,7 +94,7 @@ extension MainViewController : UICollectionViewDelegate, UICollectionViewDataSou
     func displaySearchButton()
     {
         // SEARCH BUTTON
-        searchButton = UIButton(frame: CGRect(x: view.frame.width / 4, y: 7.5 * view.frame.height / 10, width: view.frame.width / 2, height: 50))
+        searchButton = UIButton(frame: CGRect(x: view.frame.width / 4, y: 7.75 * view.frame.height / 10, width: view.frame.width / 2, height: 50))
         searchButton.setTitle("SEARCH", for: .normal)
         searchButton.backgroundColor = .red
         searchButton.addTarget(self, action: #selector(searchClicked), for: .touchUpInside)
@@ -95,7 +104,7 @@ extension MainViewController : UICollectionViewDelegate, UICollectionViewDataSou
     func displayRandomButton()
     {
         // GENERATE RANDOM BUTTON
-        randomButton = UIButton(frame: CGRect(x: view.frame.width / 4, y: 8.5 * view.frame.height / 10, width: view.frame.width / 2, height: 50))
+        randomButton = UIButton(frame: CGRect(x: view.frame.width / 4, y: 8.75 * view.frame.height / 10, width: view.frame.width / 2, height: 50))
         randomButton.setTitle("GENERATE RANDOM", for: .normal)
         randomButton.backgroundColor = .red
         randomButton.addTarget(self, action: #selector(randomClicked), for: .touchUpInside)
@@ -109,12 +118,20 @@ extension MainViewController : UICollectionViewDelegate, UICollectionViewDataSou
         layout.minimumLineSpacing = 3
         layout.minimumInteritemSpacing = 2
         layout.scrollDirection = .horizontal
-        pokemonTypesCollectionView = UICollectionView(frame: CGRect(x: view.frame.width / 8, y:  4 * view.frame.height / 10, width: 6 * view.frame.width / 8, height: 80), collectionViewLayout: layout)
+        pokemonTypesCollectionView = UICollectionView(frame: CGRect(x: view.frame.width / 8, y:  4.75 * view.frame.height / 10, width: 6 * view.frame.width / 8, height: 80), collectionViewLayout: layout)
         pokemonTypesCollectionView.register(TypeCVCell.self, forCellWithReuseIdentifier: "typeCell")
         pokemonTypesCollectionView.backgroundColor = UIColor.red
         pokemonTypesCollectionView.delegate = self
         pokemonTypesCollectionView.dataSource = self
         view.addSubview(pokemonTypesCollectionView)
+    }
+    
+    func setupNavigationBar()
+    {
+        navigationItem.title = "Pokedéx"
+        navigationController?.navigationBar.barTintColor = UIColor.black
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white, NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 30)]
+        
     }
     
     // =======================================================================================================
