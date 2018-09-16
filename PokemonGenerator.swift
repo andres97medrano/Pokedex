@@ -8,17 +8,22 @@
 
 import Foundation
 
-class PokemonGenerator {
+class PokemonGenerator
+{
     
-    static func getPokemonArray() -> [Pokemon] {
+    static func getPokemonArray() -> [Pokemon]
+    {
         var pokemonArray: [Pokemon] = []
+        
         if let path = Bundle.main.path(forResource: "pokeData", ofType: "json")
         {
-            if let jsonData = NSData(contentsOfFile: path) {
+            if let jsonData = NSData(contentsOfFile: path)
+            {
                 do {
                     let json = try JSONSerialization.jsonObject(with: jsonData as Data, options: .mutableContainers) as! [String:AnyObject]
                     
-                    for key in json.keys {
+                    for key in json.keys
+                    {
                         let pokemonData = json[key] as! [String:AnyObject]
                         let number = Int(pokemonData["#"] as! String)!
                         let attack = Int(pokemonData["Attack"] as! String)!
@@ -32,7 +37,8 @@ class PokemonGenerator {
                         let type = pokemonData["Type"] as! [String]
                         pokemonArray.append(Pokemon(name: key, number: number, attack: attack, defense: defense, health: hp, spAttack: spatk, spDef: spdef, species: species, speed: speed, total: total, types: type))
                     }
-                } catch {
+                } catch
+                {
                     NSLog("Could not load Pokemon array")
                 }
                 
