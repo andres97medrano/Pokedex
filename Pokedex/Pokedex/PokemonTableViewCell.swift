@@ -21,7 +21,7 @@ class PokemonTableViewCell: UITableViewCell
         
         pokemonNameLabel = UILabel(frame: CGRect(x: 0, y: 2 * contentView.frame.height / 5, width: contentView.frame.width, height: 20))
         pokemonNameLabel.textAlignment = .center
-        pokemonNameLabel.font = UIFont(name: "Pokemon GB", size: 12)
+        pokemonNameLabel.font = UIFont.boldSystemFont(ofSize: 12)
         contentView.addSubview(pokemonNameLabel)
         
     }

@@ -39,7 +39,7 @@ extension MainViewController : UICollectionViewDelegate, UICollectionViewDataSou
         pokedexSloganLabel.textAlignment = .center
         pokedexSloganLabel.text = "You gotta search them all!"
         pokedexSloganLabel.textColor = UIColor.white
-        pokedexSloganLabel.font = pokedexSloganLabel.font.withSize(14)
+        pokedexSloganLabel.font = UIFont.boldSystemFont(ofSize: 16)
         self.view.addSubview(pokedexSloganLabel)
     }
     

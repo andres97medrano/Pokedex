@@ -26,7 +26,7 @@ class DisplayListViewController: UIViewController
     
     // ARRAYS
     // We need to create an array with all the possible Pokemons searched based on the filters
-    var testArray = ["Hello", "Goodbye", "Hola", "Adios"]
+    var testArray = ["Hello", "Goodbye", "Hola", "Adios"]   // using this array to test the table view cell
     
     // =============================================================================================
     
