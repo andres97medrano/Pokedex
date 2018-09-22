@@ -13,13 +13,13 @@ class DisplayListViewController: UIViewController
 {
     // ===================================== USER-INTERFACE =====================================
     // TABLE VIEW
-    var resultsList : UITableView!
+    var resultsListTableView : UITableView!
     
     // COLLECTION VIEW
-    var resultsGrid : UICollectionView!
+    var resultsGridCollectionView : UICollectionView!
     
     // SEGMENTED CONTROL
-    var switchViews : UISegmentedControl!
+    var searchSegmentedControl : UISegmentedControl!
     
     
     // =====================================      DATA      =====================================
@@ -33,9 +33,10 @@ class DisplayListViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
+        view.backgroundColor = UIColor.cyan
         setupNavigationBar()
         createResultsList()
+        createSegmentedControl()
     }
     
     override func viewWillAppear(_ animated: Bool)

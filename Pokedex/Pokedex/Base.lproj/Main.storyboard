@@ -33,7 +33,7 @@
         <!--Poke Profile View Controller-->
         <scene sceneID="SFA-Zx-nps">
             <objects>
-                <viewController id="WWZ-YN-bGG" customClass="PokeProfileViewController" sceneMemberID="viewController">
+                <viewController id="WWZ-YN-bGG" customClass="PokeProfileViewController" customModule="Pokedex" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FCk-gq-KHd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -46,17 +46,17 @@
             </objects>
             <point key="canvasLocation" x="1776" y="1053"/>
         </scene>
-        <!--Search Results-->
+        <!--Display List View Controller-->
         <scene sceneID="wGN-Xm-Igr">
             <objects>
-                <viewController id="wTu-s6-GjO" customClass="DisplayListViewController" sceneMemberID="viewController">
+                <viewController id="wTu-s6-GjO" customClass="DisplayListViewController" customModule="Pokedex" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cNO-2u-gBz" customClass="UINavigationBar">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="kx8-J6-y8l"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Search Results" id="Vl6-ks-2wc"/>
+                    <navigationItem key="navigationItem" id="Vl6-ks-2wc"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p2f-Wb-CcC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
